@@ -1,0 +1,14 @@
+<%= if @movie.errors.any? %>
+
+<ol>
+	<% @movie.errors.full_messages.each do |messages| %>
+	 <li><%= 'sorry there was a fault with your selection' %></li>
+	 <% end %>>
+ 		</ol>
+
+ <% end %>
+
+
+<%= render partial: 'movie', locals: { movie: @movie } %>
+
+

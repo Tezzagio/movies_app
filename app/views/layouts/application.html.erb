@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MoviesApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="nav">
+		<% if user_signed_in? %>
+		Hello <%= current_user.email %>
+		<%= link_to 'log out', logout_path %>
+		<%else%>
+		<%= link_to 'log in', new_user_session_path %>
+		<%end%>
+
+	</div>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<div id="Body">
+
+<%= yield %>
+
+</div>
+
+</body>
+</html>

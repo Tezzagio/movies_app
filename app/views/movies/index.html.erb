@@ -1,0 +1,41 @@
+
+<h1>Welcome to RetFlix! See our awsome collection of Movies below</h1>
+<br></br>
+<p>Unlimited supply! Unrivalled catalogue!</p> 
+
+<h2>Search for your Movies below</h2>
+
+<div>
+
+<form action="/search">
+<input name="query" type="text" />
+
+<button>Press here</button>
+</form>
+
+</div>
+
+<ul>
+
+<p>
+
+	<a><%= link_to 'View Movies' , movies_path %></a>
+	<br></br>
+	<a><%= link_to 'Add New Movie' , movies_path %></a>
+	<br></br>
+	<a><%= link_to 'Edit your catalogue of Movies' , movies_path %></a>
+	<br></br>
+	
+</p>
+
+</ul>
+
+
+<% @movies.each do |movie| %>
+
+	<h1><%= movie.title %></h1>
+	<p> <%= movie.year_released %> </p>
+
+
+<% end %>
+
